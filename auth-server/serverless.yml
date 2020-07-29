@@ -22,7 +22,7 @@ service: auth-server
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs12.18.3
   region: eu-central-1
   timeout: 60 # optional, in seconds, default is 6
 
