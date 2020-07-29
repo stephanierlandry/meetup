@@ -12,7 +12,11 @@ module.exports.getAccessToken = async (event) => {
     + '&client_secret=r1n92h2a46tcrlhg1qr2u50150'
     + '&grant_type=authorization_code'
     + '&redirect_uri=https://stephanierlandry.github.io/meetup/'
+<<<<<<< HEAD
     + '&code=c4225085fda6772984291692ea27879b';
+=======
+    + '&code=' + event.pathParameters.code;
+>>>>>>> 68bcfb645665be3904f1b8ccc38a4832375932d1
 
   const info = await axios.post(MEETUP_OAUTH_URL);
 
