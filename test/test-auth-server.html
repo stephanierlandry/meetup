@@ -19,7 +19,7 @@
               // Replace this by your function endpoint
               const lambdaURL = 'https://dqcf31qq59.execute-api.eu-central-1.amazonaws.com/dev/api/token/' + codeValue;
 
-              fetch(lambdaURL)
+              fetch(lambdaURL, {mode: "no-cors"})
                 .then(function(response) {
                   return response.json();
                 })
