@@ -11,6 +11,7 @@ describe('<CitySearch /> component', () => {
   beforeAll(() => {
     CitySearchWrapper = shallow(<CitySearch />);
   })
+  
   test('render text input', () => {
     expect(CitySearchWrapper.find('.city')).toHaveLength(1);
   });
