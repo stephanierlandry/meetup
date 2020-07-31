@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Event from './Event';
+import EventDetails from './EventDetails';
 
 class EventList extends Component {
 
