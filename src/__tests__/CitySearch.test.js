@@ -5,13 +5,14 @@ import App from '../App';
 import CitySearch from '../CitySearch';
 
 
+
 describe('<CitySearch /> component', () => {
   let CitySearchWrapper;
 
   beforeAll(() => {
     CitySearchWrapper = shallow(<CitySearch />);
   })
-  
+
   test('render text input', () => {
     expect(CitySearchWrapper.find('.city')).toHaveLength(1);
   });
