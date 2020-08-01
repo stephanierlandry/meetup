@@ -73,9 +73,10 @@ describe('<CitySearch /> component', () => {
 
 describe('<CitySearch /> integration', () => {
 
-  test('get a list of cities when user searches for Munich', () => {
+  test('get a list of cities when user searches for Munich', async () => {
     const CitySearchWrapper = shallow(<CitySearch />);
     CitySearchWrapper.find('.city').simulate('change', { target: { value: 'Munich' } });
+    await CitySearchWrapper.update();
     expect(CitySearchWrapper.state('suggestions')).toEqual([
         {
           city: 'Munich',

@@ -21,3 +21,5 @@ async function getSuggestions(query) {
     }
   ];
 }
+
+export { getSuggestions };
