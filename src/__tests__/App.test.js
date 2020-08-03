@@ -39,7 +39,13 @@ describe('<App /> integration', () => {
     const AppWrapper = shallow(<App />);
     AppWrapper.instance().updateEvents(1.1, 1.2);
     await AppWrapper.update();
-    console.log(mockEvents);
     expect(AppWrapper.state('events')).toEqual(mockEvents.events);
   });
+
+  test('render correct list of events', () => {
+   const AppWrapper = mount(<App />);
+   AppWrapper.setState({ events: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }] });
+   expect(AppWrapper.find('.event')).toHaveLength(4);
+   AppWrapper.unmount();
+ });
 });

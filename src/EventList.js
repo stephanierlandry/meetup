@@ -5,21 +5,17 @@ import EventDetails from './EventDetails';
 
 class EventList extends Component {
 
-  state = {
-    events: [],
-  }
-
   render() {
-    return (
-      <ul className="EventList">
-        {this.state.events.map(event =>
-          <li key={event.id}>
-            <Event event={event} />
-          </li>
-        )}
-      </ul>
-    );
+      return (
+        <ul className="EventList">
+          {this.props.events.map(event =>
+            <li key={event.id}>
+              <Event event={event} />
+            </li>
+          )}
+        </ul>
+      );
+    }
   }
-}
 
 export default EventList;
