@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 import App from '../App';
 import EventList from '../EventList';
 import CitySearch from '../CitySearch';
-import { mockEvents } from '../mock-events'
+import { mockEvents } from '../mockEvents/mockEvents.js';
 
 describe('<App /> component', () => {
   let AppWrapper;
@@ -36,12 +36,10 @@ describe('<App /> integration', () => {
   });
 
   test('change state after get list of events', async () => {
-      const AppWrapper = shallow(<App />);
-      AppWrapper.instance().updateEvents = jest.fn();
-      AppWrapper.instance().forceUpdate();
-      AppWrapper.instance().updateEvents(1.1, 1.2);
-      await AppWrapper.update();
-      expect(AppWrapper.state('events')).toEqual(mockEvents.events);
-    });
-
+    const AppWrapper = shallow(<App />);
+    AppWrapper.instance().updateEvents(1.1, 1.2);
+    await AppWrapper.update();
+    console.log(mockEvents);
+    expect(AppWrapper.state('events')).toEqual(mockEvents.events);
+  });
 });
