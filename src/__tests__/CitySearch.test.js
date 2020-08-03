@@ -41,6 +41,7 @@ describe('<CitySearch /> component', () => {
   });
 
   test('click on suggestion should change query state', () => {
+    CitySearchWrapper = shallow(<CitySearch updateEvents={() => {}}/>);
     CitySearchWrapper.setState({
       suggestions: [
         {
