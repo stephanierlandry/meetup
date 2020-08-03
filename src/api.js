@@ -1,3 +1,5 @@
+import { mockEvents } from './mockEvents/mockEvents.js';
+
 async function getSuggestions(query) {
   return [
     {
