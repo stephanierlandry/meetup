@@ -38,7 +38,22 @@ async function getSuggestions(query) {
 }
 
 async function getEvents(lat, lon) {
-  return mockEvents.events;
+  if (window.location.href.startsWith('http://localhost')) {
+    return mockEvents.events;
+  }
+
+  const token = await getAccessToken();
+
+  if (token) {
+    let url = 'https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public'
+      + '&access_token=' + token;
+    // lat, lon is optional; if you have a lat and lon, you can add them
+    if (lat && lon) {
+      url += '&lat=' + lat + '&lon=' + lon;
+    }
+    const result = await axios.get(url);
+    return result.data.events;
+  }
 }
 
 function getAccessToken() {
