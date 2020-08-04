@@ -21,6 +21,9 @@ class CitySearch extends Component {
   }
 
   render() {
+
+    console.log(this.state.suggestions)
+    
     return (
       <div className="CitySearch">
         <input type="text" className="city" value={this.state.query} onChange={this.handleInputChanged}/>

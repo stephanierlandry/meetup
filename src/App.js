@@ -8,6 +8,10 @@ import { getEvents } from './api';
 
 class App extends Component {
 
+  // componentDidMount() {
+  //   getEvents().then(response => this.setState({ events: response }));
+  // }
+
   state = {
     events: []
   }
@@ -17,6 +21,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('App', this.state.events)
     return (
       <div className="App">
         <CitySearch  updateEvents= { this.updateEvents } />

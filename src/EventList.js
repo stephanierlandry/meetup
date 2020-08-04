@@ -6,7 +6,7 @@ class EventList extends Component {
 
   render() {
 
-    console.log('EventList', this.props.events)
+    console.log('EventList', this.props)
 
     return (
       <ul className="EventList">
