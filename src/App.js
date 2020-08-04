@@ -8,10 +8,6 @@ import { getEvents } from './api';
 
 class App extends Component {
 
-  // componentDidMount() {
-  //   getEvents().then(response => this.setState({ events: response }));
-  // }
-
   state = {
     events: []
   }
