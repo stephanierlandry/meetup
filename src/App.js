@@ -17,7 +17,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('App', this.state.events)
     return (
       <div className="App">
         <CitySearch  updateEvents= {this.updateEvents} />
