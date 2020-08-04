@@ -2,27 +2,39 @@ import { mockEvents } from './mockEvents/mockEvents.js';
 import axios from 'axios';
 
 async function getSuggestions(query) {
-  return [
-    {
-      city: 'Munich',
-      country: 'de',
-      localized_country_name: 'Germany',
-      name_string: 'Munich, Germany',
-      zip: 'meetup3',
-      lat: 48.14,
-      lon: 11.58
-    },
-    {
-      city: 'Munich',
-      country: 'us',
-      localized_country_name: 'USA',
-      state: 'ND',
-      name_string: 'Munich, North Dakota, USA',
-      zip: '58352',
-      lat: 48.66,
-      lon: -98.85
-    }
-  ];
+  if (window.location.href.startsWith('http://localhost')) {
+    return [
+      {
+        city: 'Munich',
+        country: 'de',
+        localized_country_name: 'Germany',
+        name_string: 'Munich, Germany',
+        zip: 'meetup3',
+        lat: 48.14,
+        lon: 11.58
+      },
+      {
+        city: 'Munich',
+        country: 'us',
+        localized_country_name: 'USA',
+        state: 'ND',
+        name_string: 'Munich, North Dakota, USA',
+        zip: '58352',
+        lat: 48.66,
+        lon: -98.85
+      }
+    ];
+  }
+
+  const token = await getAccessToken();
+  if (token) {
+    const url = 'https://api.meetup.com/find/locations?&sign=true&photo-host=public&query='
+      + query
+      + '&access_token=' + token;
+    const result = await axios.get(url);
+    return result.data;
+  }
+  return [];
 }
 
 async function getEvents(lat, lon) {
@@ -77,4 +89,4 @@ async function getOrRenewAccessToken(type, key) {
   return tokenInfo.data.access_token;
 }
 
-export { getSuggestions, getEvents, getAccessToken };
+export { getSuggestions, getEvents, getAccessToken, getOrRenewAccessToken };
