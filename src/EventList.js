@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Event from './Event';
-import EventDetails from './EventDetails';
 
 class EventList extends Component {
 
@@ -10,6 +9,9 @@ class EventList extends Component {
   }
 
   render() {
+
+    console.log('EventList' , this.state.events)
+
     return (
       <ul className="EventList">
         {this.state.events.map(event =>

@@ -39,7 +39,6 @@ describe('<App /> integration', () => {
     const AppWrapper = shallow(<App />);
     AppWrapper.instance().updateEvents(1.1, 1.2);
     await AppWrapper.update();
-    console.log(mockEvents);
     expect(AppWrapper.state('events')).toEqual(mockEvents.events);
   });
 });

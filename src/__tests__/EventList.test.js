@@ -4,8 +4,6 @@ import { shallow } from 'enzyme';
 import App from '../App';
 import EventList from '../EventList';
 import Event from '../Event';
-import EventDetails from '../EventDetails';
-
 
 describe('<EventList /> component', () => {
   test('render correct number of events', () => {
