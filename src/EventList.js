@@ -4,17 +4,13 @@ import Event from './Event';
 
 class EventList extends Component {
 
-  state = {
-    events: [],
-  }
-
   render() {
 
-    console.log('EventList' , this.state.events)
+    console.log('EventList', this.props.events)
 
     return (
       <ul className="EventList">
-        {this.state.events.map(event =>
+        {this.props.events.map(event =>
           <li key={event.id}>
             <Event event={event} />
           </li>
