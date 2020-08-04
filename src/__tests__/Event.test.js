@@ -54,7 +54,7 @@ describe ('<Event /> component', () => {
         "member_pay_fee": false
       }
 
-    EventWrapper = shallow(<Event />);
+    EventWrapper = shallow(<Event event = {event} />);
   })
 
   test('render event', () => {

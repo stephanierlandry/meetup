@@ -25,7 +25,11 @@ class Event extends Component {
           <h1 className="eventName">{event.name}</h1>
           <p className="eventDate">{event.local_date}</p>
           <p className="eventTime">{event.local_time}</p>
+<<<<<<< ours
           <p className="eventVenue">{event.venue.name}</p>
+=======
+          <p className="eventVenue">{event.venue ? event.venue.name : null}</p>
+>>>>>>> theirs
 
           {showDetails &&
             <button className="details-btn" onClick={() => this.handleShowDetails()}>hide details</button>
