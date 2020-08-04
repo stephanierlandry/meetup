@@ -20,13 +20,8 @@ class App extends Component {
     console.log('App', this.state.events)
     return (
       <div className="App">
-<<<<<<< ours
         <CitySearch  updateEvents= {this.updateEvents} />
         <EventList events={this.state.events} />
-=======
-        <CitySearch  updateEvents= { this.updateEvents } />
-        <EventList events = { this.state.events } />
->>>>>>> theirs
         <NumberOfEvents />
       </div>
     );
