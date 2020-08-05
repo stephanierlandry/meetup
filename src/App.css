@@ -30,6 +30,10 @@ input[type="text"], input[type="number"] {
   margin: 2em;
 }
 
+.logo{
+  margin-top: 4em;
+}
+
 .city {
   width: 250px;
 }
