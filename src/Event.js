@@ -28,10 +28,10 @@ class Event extends Component {
           <p className="eventVenue">{event.venue ? event.venue.name : null}</p>
 
           {showDetails &&
-            <button className="details-btn" onClick={() => this.handleShowDetails()}>hide details</button>
+            <button className=" btn" onClick={() => this.handleShowDetails()}>hide details</button>
           }
           {!showDetails &&
-            <button className="details-btn" onClick={() => this.handleShowDetails()}>show details</button>
+            <button className=" btn" onClick={() => this.handleShowDetails()}>show details</button>
           }
         </div>
         {showDetails &&

@@ -19,9 +19,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CitySearch  updateEvents= {this.updateEvents} />
-        <EventList events={this.state.events} />
-        <NumberOfEvents />
+
+
+          <CitySearch  updateEvents= {this.updateEvents} />
+          <NumberOfEvents />
+        <div className="units-row">
+          <EventList events={this.state.events} />
+        </div>
+
       </div>
     );
   }
