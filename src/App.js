@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import './ply/dist/css/ply.min.css';
 import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
