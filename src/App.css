@@ -30,6 +30,10 @@ input[type="text"], input[type="number"] {
   margin: 1em;
 }
 
+input:hover {
+  border-color: #ED1C40;
+}
+
 .logo {
   margin-top: 4em;
 }
@@ -68,7 +72,7 @@ input[type="text"], input[type="number"] {
 
 
 .suggestions > li:hover {
-  background-color: #BCDCDB;
+  background-color: #F5E6E7;
 }
 
 .event-container {

@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div className="App">
 
-          <img src="https://auth-server-dev-serverlessdeploymentbucket-1gfi6z6bkqcu9.s3.eu-central-1.amazonaws.com/meetupLogo.png"
+          <img src="https://auth-server-dev-serverlessdeploymentbucket-1gfi6z6bkqcu9.s3.eu-central-1.amazonaws.com/logo--script.svg"
                 alt="Meetup Logo in pink"
                 width="400px"
                 className="logo"/>

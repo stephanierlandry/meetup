@@ -19,8 +19,8 @@ class Event extends Component {
     const showDetails = this.state.showDetails;
     const event = this.props.event;
     const date = new Date(new Date(event.local_date).toDateString());
-    console.log(date)
 
+    console.log(event)
 
     return (
       <div className="event">
