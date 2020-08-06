@@ -24,7 +24,7 @@ class App extends Component {
           <img src="https://auth-server-dev-serverlessdeploymentbucket-1gfi6z6bkqcu9.s3.eu-central-1.amazonaws.com/meetupLogo.png"
                 alt="Meetup Logo in pink"
                 width="400px"
-                class="logo"/>
+                className="logo"/>
           <CitySearch  updateEvents= {this.updateEvents} />
           <NumberOfEvents />
         <div className="units-row">

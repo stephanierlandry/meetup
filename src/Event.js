@@ -18,25 +18,27 @@ class Event extends Component {
   render() {
     const showDetails = this.state.showDetails;
     const event = this.props.event;
+    const date = new Date(new Date(event.local_date).toDateString());
+    console.log(date)
+
 
     return (
       <div className="event">
         <div className="eventOverview">
           <h1 className="eventName">{event.name}</h1>
-          <p className="eventDate">{event.local_date}</p>
-          <p className="eventTime">{event.local_time}</p>
+          <p className="eventDate">{date.toUTCString()}</p>
           <p className="eventVenue">{event.venue ? event.venue.name : null}</p>
 
           {showDetails &&
-            <button className=" btn" onClick={() => this.handleShowDetails()}>hide details</button>
+            <button className=" detail-btn btn" onClick={() => this.handleShowDetails()}>hide details</button>
           }
           {!showDetails &&
-            <button className=" btn" onClick={() => this.handleShowDetails()}>show details</button>
+            <button className="detail-btn btn" onClick={() => this.handleShowDetails()}>show details</button>
           }
         </div>
         {showDetails &&
           <div className="eventDetails">
-            <p className="eventDescription">{event.description}</p>
+            <p className="eventDescription" dangerouslySetInnerHTML={{ __html: event.description }}></p>
             <p className="eventLink">{event.link}</p>
           </div>
         }

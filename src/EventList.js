@@ -9,13 +9,14 @@ class EventList extends Component {
         <ul className="EventList">
           <div className="units-row">
             {this.props.events.map(event =>
-              <div className="unit-33">
+              <div className="event-container" tabIndex="0">
                 <li key={event.id}>
                   <Event event={event} />
                 </li>
               </div>
             )}
           </div>
+          <div className="units-row"></div>
         </ul>
       );
     }
