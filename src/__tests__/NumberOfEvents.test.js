@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
+
 import App from '../App';
 import NumberOfEvents from '../NumberOfEvents';
 
@@ -25,5 +26,14 @@ describe('<NumberOfEvents /> component', () => {
     NumberOfEventsWrapper.find('.number').simulate('change', eventObject);
     expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe(32);
   });
+
+});
+
+describe('<NumberOfEvents /> integration', () => {
+  test('change state when input changes', () => {
+    const NumberOfEventsWrapper = shallow(<NumberOfEvents/>);
+    NumberOfEvents.find('.number').simulate('change', { target: { value: 2}});
+    expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe(2);
+  })
 
 });
