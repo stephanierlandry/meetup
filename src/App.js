@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-// import './ply/ply.min.css';
-import './App.css';
+import './styles/ply.min.css';
+import './styles/App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
