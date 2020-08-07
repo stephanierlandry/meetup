@@ -90,6 +90,27 @@ input:hover {
   background-color: white;
 }
 
+a {
+  text-decoration: none;
+  color: #ED1C40;
+}
+
+a:hover {
+  color: #7E1729;
+}
+
+.eventLink{
+  color: #0D48F1;
+}
+
+.eventLink:hover{
+  color:#082988;
+}
+
+.btn {
+  margin: 1.5em !important;
+}
+
 .detail-btn {
   background-color: #ED1C40 !important;
   color: white !important;
