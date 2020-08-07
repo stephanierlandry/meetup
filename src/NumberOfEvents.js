@@ -3,19 +3,39 @@ import React, { Component } from 'react';
 class NumberOfEvents extends Component {
 
   state = {
-    numberOfEvents: '',
+    numberOfEvents: 32,
     infoText: ''
   }
 
   handleNumberChange = (event) => {
     const value = event.target.value;
     this.setState({ numberOfEvents: value });
+
+
+    if (value < 1) {
+     this.setState({
+       infoText: 'Number must be 1 or greater'
+     });
+   } else {
+     this.setState({
+       infoText: '',
+     });
+
+     this.props.updateEvents(null, null, value);
+   }
   }
 
   render() {
+
     return (
       <div className="numberOfEvents">
-        <input type="text" value={this.state.numberOfEvents} onChange={this.handleNumberChange} className="number" placeholder="number of events"/>
+        <input
+          type="text"
+          value={this.state.numberOfEvents}
+          onChange={this.handleNumberChange}
+          className="number"
+          placeholder="number of events"/>
+        <div className="error">{this.state.infoText}</div>
       </div>
     );
   }

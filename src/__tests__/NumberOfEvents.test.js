@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+
 
 import App from '../App';
 import NumberOfEvents from '../NumberOfEvents';
@@ -24,6 +25,25 @@ describe('<NumberOfEvents /> component', () => {
     const eventObject = {target: { value: 32 }};
     NumberOfEventsWrapper.find('.number').simulate('change', eventObject);
     expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe(32);
+  });
+
+});
+
+describe('<NumberOfEvents /> integration', () => {
+  let NumberOfEventsWrapper;
+
+  test('number of events 32 automatically', () => {
+    NumberOfEventsWrapper = shallow(< NumberOfEvents />);
+    NumberOfEventsWrapper.update();
+    expect((NumberOfEventsWrapper.find('.event')).length).toBeLessThanOrEqual(32);
+  });
+
+  test('user can change the number of events', () => {
+    NumberOfEventsWrapper = mount(< NumberOfEvents />);
+    const numberOfEvents = { target: { value: 32 }};
+    NumberOfEventsWrapper.find('.number').simulate('change', numberOfEvents);
+    NumberOfEventsWrapper.setState({ numberOfEvents: 13 });
+    expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe(13);
   });
 
 });

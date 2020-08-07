@@ -66,7 +66,7 @@ describe ('<Event /> component', () => {
   });
 
   test('render event info', () => {
-    expect(EventWrapper.find('.eventOverview').children()).toHaveLength(5);
+    expect(EventWrapper.find('.eventOverview').children()).toHaveLength(4);
   });
 
   test('render event details', () => {

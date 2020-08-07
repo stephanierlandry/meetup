@@ -37,7 +37,7 @@ async function getSuggestions(query) {
   return [];
 }
 
-async function getEvents(lat, lon) {
+async function getEvents(lat, lon, page) {
   if (window.location.href.startsWith('http://localhost')) {
     return mockEvents.events;
   }
@@ -51,10 +51,21 @@ async function getEvents(lat, lon) {
     if (lat && lon) {
       url += '&lat=' + lat + '&lon=' + lon;
     }
+
+    if(page) {
+      url += '&page' + page
+    }
+
+    if(lat && lon && page){
+      url += '&lat=' + lat + '&lon=' + lon + '&page=' + page;
+    }
+
     const result = await axios.get(url);
-    return result.data.events;
+    const events = result.data.events;
+
+    return events;
   }
-}
+};
 
 function getAccessToken() {
   const accessToken = localStorage.getItem('access_token');
