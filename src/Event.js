@@ -39,7 +39,7 @@ class Event extends Component {
         {showDetails &&
           <div className="eventDetails">
             <p className="eventDescription" dangerouslySetInnerHTML={{ __html: event.description }}></p>
-            <p className="eventLink">{event.link}</p>
+            <a href={event.link} target="_blank" className="eventLink">More Info</a>
           </div>
         }
       </div>

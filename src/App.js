@@ -20,17 +20,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
           <img src="https://auth-server-dev-serverlessdeploymentbucket-1gfi6z6bkqcu9.s3.eu-central-1.amazonaws.com/logo--script.svg"
                 alt="Meetup Logo in pink"
                 width="400px"
                 className="logo"/>
           <CitySearch  updateEvents= {this.updateEvents} />
           <NumberOfEvents />
-        <div className="units-row">
           <EventList events={this.state.events} />
-        </div>
-
       </div>
     );
   }
