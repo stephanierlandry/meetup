@@ -1,23 +1,31 @@
+import React from 'react';
+import { mount } from 'enzyme';
 import { loadFeature, defineFeature } from 'jest-cucumber';
+
+import App from '../App';
+import { mockEvents } from '../mockEvents/mockEvents'
+
 
 const feature = loadFeature('./src/features/filterEventsByCity.feature');
 
 defineFeature(feature, test => {
+
   test('By default, when user hasn’t searched for a city, show upcoming events based on the user’s location', ({ given, when, then }) => {
     	given('user hasn’t searched for any city', () => {
-
     	});
 
-    	when('the user opens the app', () => {
+      let AppWrapper;
 
+    	when('the user opens the app', () => {
+        AppWrapper = mount(<App />)
     	});
 
     	then('the user should see the list of upcoming events from their location', () => {
-
+        AppWrapper.update();
+        expect(AppWrapper.find('.event')).toHaveLength(mockEvents.events.length);
     	});
     });
 
-    Feature file has a scenario titled "User should see a list of suggestions when they search for a city", but no match found in step definitions. Try adding the following code:
 
     test('User should see a list of suggestions when they search for a city', ({ given, when, then }) => {
     	given('the main page is open', () => {
@@ -32,8 +40,6 @@ defineFeature(feature, test => {
 
     	});
     });
-
-    Feature file has a scenario titled "User can select a city from the suggested list", but no match found in step definitions. Try adding the following code:
 
     test('User can select a city from the suggested list', ({ given, and, when, then }) => {
     	given('user was typing “Munich” in the city textbox', () => {
