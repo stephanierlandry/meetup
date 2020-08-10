@@ -32,4 +32,5 @@ describe('show/hide an event details', () => {
     const extra = await page.$('.event .extra');
     expect(extra).toBeNull();
   })
+  
 });
