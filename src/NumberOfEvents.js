@@ -10,7 +10,7 @@ class NumberOfEvents extends Component {
   handleNumberChange = (event) => {
     const value = event.target.value;
     this.setState({ numberOfEvents: value });
-    // this.props.updateEvents(null, null, value);
+    this.props.updateEvents(null, null, value);
 
     if (value < 1) {
      this.setState({
