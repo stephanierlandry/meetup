@@ -18,6 +18,7 @@ class App extends Component {
     offlineText: ''
   }
 
+
   componentDidMount(){
     getEvents().then(response => this.setState({ events: response }));
   }

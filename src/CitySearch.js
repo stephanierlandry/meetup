@@ -8,12 +8,20 @@ class CitySearch extends Component {
   state = {
     query: '',
     suggestions: [],
-    infoText: ''
+    infoText: '',
+    offlineText: ''
   }
 
   handleInputChanged = (event) => {
     const value = event.target.value;
     this.setState({ query: value });
+
+    if (!navigator.onLine) {
+      this.props.updateEvents({ offlineText: 'No Network Connection! Event list loaded from last session.' });
+    } else {
+      this.props.updateEvents({ offlineText: '' })
+    }
+
     getSuggestions(value).then(suggestions => {
       this.setState({ suggestions });
 
