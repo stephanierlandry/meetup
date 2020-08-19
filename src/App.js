@@ -54,6 +54,7 @@ class App extends Component {
                 width="400px"
                 className="logo"/>
           <CitySearch  updateEvents= {this.updateEvents} />
+          <OfflineAlert text={this.state.offlineText}/>
           <NumberOfEvents
             updateEvents={this.updateEvents}
             numberOfEvents={this.state.events.length}
