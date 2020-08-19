@@ -6,6 +6,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api';
+import { OfflineAlert } from './Alert';
 
 class App extends Component {
 
@@ -13,7 +14,8 @@ class App extends Component {
     events: [],
     page: null,
     lat: null,
-    lon: null
+    lon: null,
+    offlineText: ''
   }
 
   componentDidMount(){
@@ -21,6 +23,17 @@ class App extends Component {
   }
 
   updateEvents = (lat, lon, page) => {
+
+    if (!navigator.onLine) {
+      this.setState({
+        offlineText: 'You are offline! Reconnect to get new events.'
+      })
+    } else {
+      this.setState({
+        offlineText: ''
+      })
+    }
+
     if(lat && lon) {
       getEvents(lat, lon, this.state.page).then(response => this.setState({ events: response, lat, lon }));
     }
@@ -33,7 +46,7 @@ class App extends Component {
   }
 
   render() {
-  
+
     return (
       <div className="App">
           <img src="https://auth-server-dev-serverlessdeploymentbucket-1gfi6z6bkqcu9.s3.eu-central-1.amazonaws.com/logo--script.svg"
