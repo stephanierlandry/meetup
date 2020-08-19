@@ -47,6 +47,10 @@ input:hover {
   margin: 0;
 }
 
+.chart-container{
+  display: flex;
+}
+
 .city {
   width: 250px;
 }

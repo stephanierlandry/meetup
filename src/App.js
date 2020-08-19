@@ -90,7 +90,8 @@ class App extends Component {
           <ScatterChart
             width={800}
             height={400}
-            margin={{ top: 20, right: 20, bottom: 20, left: 20,}}>
+            margin={{ top: 20, right: 20, bottom: 20, left: 20,}}
+            className="chart-container">
             <CartesianGrid />
             <XAxis type="category" dataKey="date" name="date"  />
             <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
