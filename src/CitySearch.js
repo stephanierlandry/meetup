@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { getSuggestions } from './api';
 import { InfoAlert } from './Alert';
-import { OfflineAlert } from '.Alert';
+// import { OfflineAlert } from './Alert';
 
 class CitySearch extends Component {
 
@@ -17,11 +17,11 @@ class CitySearch extends Component {
     const value = event.target.value;
     this.setState({ query: value });
 
-    if (!navigator.onLine) {
-      this.props.updateEvents({ offlineText: 'No Network Connection! Event list loaded from last session.' });
-    } else {
-      this.props.updateEvents({ offlineText: '' })
-    }
+    // if (!navigator.onLine) {
+    //   this.props.updateEvents({ offlineText: 'No Network Connection! Event list loaded from last session.' });
+    // } else {
+    //   this.props.updateEvents({ offlineText: '' })
+    // }
 
     getSuggestions(value).then(suggestions => {
       this.setState({ suggestions });
@@ -54,7 +54,6 @@ class CitySearch extends Component {
           )}
         </ul>
         <InfoAlert text={this.state.infoText}/>
-        <OfflineAlert text={this.state.offlineText}/>
       </div>
     );
   }
