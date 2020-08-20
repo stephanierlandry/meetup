@@ -51,6 +51,19 @@ input:hover {
   transform: translate(-5%, 0);
 }
 
+.recharts-legend-wrapper {
+  transform: translate(22%,0);
+
+}
+.rsvp-chart{
+  margin-top: -5em;
+  margin-bottom: 1em;
+}
+
+.no-rsvp{
+  margin-top: 5em;
+}
+
 .chart{
   display: flex;
   width: 100%;
