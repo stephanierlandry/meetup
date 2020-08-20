@@ -61,7 +61,7 @@ const mockEvents = {
       duration: 28800000,
       id: "272375614",
       name: "Classic Southern Route - Classic Sunday Ride ",
-      rsvp_limit: 20,
+      rsvp_limit: 0,
       date_in_series_pattern: false,
       status: "upcoming",
       time: 1596960000000,
