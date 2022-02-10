@@ -13,7 +13,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "jest-cucumber": "^3.0.0",
     "moment": "^2.27.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "plygrid": "^0.8.1",
     "puppeteer": "^5.2.1",
     "react": "^16.13.1",
